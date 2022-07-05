@@ -1,11 +1,11 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Fernanda da Silva Claudio
+- Germanna de Fatima Oliveira de Lima
+- Ítalo Fernandes Avelino
 
-Link do Surge: www.link.com.br
+Link do Surge: <link do surge>
 
 O que funciona:
 - Item 1
