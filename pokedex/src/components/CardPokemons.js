@@ -36,15 +36,13 @@ export const CardPokemons = () => {
       {!isLoading &&
         pokemons &&
         pokemons.length >= 0 &&
-        pokemons.map((pokemon) => {
+        pokemons.map((pokemon, index) => {
+          let PegaIndex = 1 + index;
+          let url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${PegaIndex}.png`;
           return (
-            <Conteudo key={pokemon.id}>
-              <img
-                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
-                alt=""
-              />
-              <p>{pokemon.name}</p>
-              {console.log(pokemon)}
+            <Conteudo key={index}>
+              <img src={url} alt={pokemon.name} />
+              <p>{pokemon.id}</p>
               <Buttons>
                 <button>Adicionar a Pokédex</button>
                 <button onClick={() => goToDetails(navigate)}>Detalhes</button>

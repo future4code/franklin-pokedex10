@@ -14,6 +14,7 @@ export const useRequestData = (url) => {
       .then((response) => {
         setIsLoading(false);
         setData(response.data.results);
+        console.log(response.data);
       })
       .catch((error) => {
         setIsLoading(false);
