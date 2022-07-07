@@ -26,9 +26,10 @@ const Buttons = styled.div`
     padding: 4px 8px;
   }
 `;
+
 export const CardPokemons = () => {
   const navigate = useNavigate();
-  const [pokemons, error, isLoading] = useRequestData(`${BASE_URL}`);
+  const [pokemons, error, isLoading] = useRequestData(`${BASE_URL}pokemon/`);
   return (
     <Container>
       {isLoading && <p>Carregando</p>}
@@ -45,7 +46,12 @@ export const CardPokemons = () => {
               <p>{pokemon.id}</p>
               <Buttons>
                 <button>Adicionar a Pokédex</button>
-                <button onClick={() => goToDetails(navigate)}>Detalhes</button>
+                <button
+                  onClick={() => goToDetails(navigate, pokemon.name)}
+                  key={pokemon.name}
+                >
+                  Detalhes
+                </button>
               </Buttons>
             </Conteudo>
           );

@@ -10,6 +10,6 @@ export const goToList = (navigate) => {
   navigate('/pokedex/list');
 };
 
-export const goToDetails = (navigate) => {
-  navigate('/pokedex/details');
+export const goToDetails = (navigate, props) => {
+  navigate(`/pokedex/details/${props}`);
 };

@@ -4,7 +4,7 @@ import { CardPokemons } from '../components/CardPokemons';
 import { useNavigate } from 'react-router-dom';
 import { goToList } from '../routes/coordinator';
 
-const Header = styled.div`
+export const Header = styled.div`
   display: flex;
   color: #ffd500;
   background-color: #00509d;
@@ -12,7 +12,7 @@ const Header = styled.div`
   justify-content: center;
   position: relative;
 `;
-const Button = styled.button`
+export const Button = styled.button`
   position: absolute;
   left: 20px;
   margin-top: 28px;
