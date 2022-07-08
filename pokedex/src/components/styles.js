@@ -42,31 +42,34 @@ export const Img = styled.img`
 export const Div1 = styled.div`
   grid-area: 1 / 1 / 2 / 2;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-  padding: 10px;
+  padding: 12px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
 `;
 export const Div2 = styled.div`
   grid-area: 2 / 1 / 3 / 2;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-  padding: 10px;
+  padding: 12px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
 `;
 export const Div3 = styled.div`
   grid-area: 1 / 2 / 3 / 3;
+  border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
   padding: 10px;
 `;
 export const Div4 = styled.div`
   grid-area: 1 / 3 / 2 / 4;
+  border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-
   padding: 10px;
 `;
 export const Div5 = styled.div`
   grid-area: 2 / 3 / 3 / 4;
+  border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-
   padding: 10px;
 `;
