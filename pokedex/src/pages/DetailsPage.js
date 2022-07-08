@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { goToLastPage } from '../routes/coordinator';
 import { CardDetails } from '../components/CardDetails';
-import { Header, Button } from './HomePage';
+import { Header, Button, ButtonDetails } from './styles';
 export const DetailsPage = () => {
   const navigate = useNavigate();
   return (
@@ -10,7 +10,7 @@ export const DetailsPage = () => {
       <Header>
         <Button onClick={() => goToLastPage(navigate)}>Voltar</Button>
         <h1>Detalhes do Pokemon</h1>
-        <button>Adicionar/remover da pokedex</button>
+        <ButtonDetails>Adicionar/remover da pokedex</ButtonDetails>
       </Header>
       <CardDetails />
     </div>
