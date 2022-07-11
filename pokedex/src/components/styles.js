@@ -3,15 +3,16 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  background-color: white;
 `;
 export const Conteudo = styled.div`
   display: flex;
+  border-radius: 10px;
+  background-color: white;
   flex-direction: column;
   padding: 15px;
   margin: 20px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 `;
 
 export const ContainerDetails = styled.div`
@@ -60,16 +61,26 @@ export const Div3 = styled.div`
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
 `;
 export const Div4 = styled.div`
   grid-area: 1 / 3 / 2 / 4;
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 export const Div5 = styled.div`
   grid-area: 2 / 3 / 3 / 4;
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
