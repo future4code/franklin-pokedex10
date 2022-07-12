@@ -15,13 +15,15 @@ export const CardPokemons = () => {
         pokemons &&
         pokemons.length >= 0 &&
         pokemons.map((pokemon, index) => {
+          const str = pokemon.name;
+          const nome_pokemon = str[0].toUpperCase() + str.substr(1);
           let PegaIndex = 1 + index;
           let url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${PegaIndex}.png`;
           return (
             <Conteudo key={index}>
               <img src={url} alt={pokemon.name} />
               <Buttons>
-                <h3>{pokemon.name}</h3>
+                <h3>{nome_pokemon}</h3>
                 <button>Adicionar a Pokédex</button>
                 <button
                   onClick={() => goToDetails(navigate, pokemon.name)}
