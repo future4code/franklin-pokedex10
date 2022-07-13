@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-
+export const Imagem = styled.img`
+  max-width: 200px;
+`;
 export const Buttons = styled.div`
   display: flex;
   text-align: center;
@@ -80,6 +82,7 @@ export const Div2 = styled.div`
   padding: 12px;
   border-radius: 10px;
   display: flex;
+  align-items: center;
   justify-content: center;
 `;
 export const Div3 = styled.div`

@@ -3,7 +3,7 @@ import { useRequestData } from '../hooks/useRequestData';
 import { BASE_URL } from '../constants/urls';
 import { useNavigate } from 'react-router-dom';
 import { goToDetails } from '../routes/coordinator';
-import { Container, Conteudo, Buttons } from './styles';
+import { Container, Conteudo, Buttons, Imagem } from './styles';
 export const CardPokemons = () => {
   const navigate = useNavigate();
   const [pokemons, error, isLoading] = useRequestData(`${BASE_URL}pokemon/`);
@@ -18,10 +18,10 @@ export const CardPokemons = () => {
           const str = pokemon.name;
           const nome_pokemon = str[0].toUpperCase() + str.substr(1);
           let PegaIndex = 1 + index;
-          let url = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${PegaIndex}.png`;
+          let url = ` https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${PegaIndex}.png`;
           return (
             <Conteudo key={index}>
-              <img src={url} alt={pokemon.name} />
+              <Imagem src={url} alt={pokemon.name} />
               <Buttons>
                 <h3>{nome_pokemon}</h3>
                 <button>Adicionar a Pokédex</button>
