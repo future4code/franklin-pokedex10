@@ -3,6 +3,7 @@ import { ErrorPage } from '../pages/ErrorPage';
 import { HomePage } from '../pages/HomePage';
 import { PokedexPage } from '../pages/PokedexPage';
 import { DetailsPage } from '../pages/DetailsPage';
+
 export const Router = () => {
   return (
     <BrowserRouter>
