@@ -24,12 +24,28 @@ export const Button = styled.button`
   position: absolute;
   left: 20px;
   margin-top: 28px;
+  background-color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 16px;
+  color: #00509d;
 `;
 
 export const ButtonDetails = styled.button`
   position: absolute;
   right: 20px;
   margin-top: 28px;
+  background-color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 16px;
+  color: #00509d;
 `;
 
 export const Span = styled.span`
