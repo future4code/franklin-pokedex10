@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+
 export const Imagem = styled.img`
   max-width: 200px;
 `;
+
 export const Buttons = styled.div`
   display: flex;
   text-align: center;
@@ -33,6 +35,7 @@ export const Container = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   background-color: white;
 `;
+
 export const Conteudo = styled.div`
   display: flex;
   border-radius: 10px;

@@ -1,24 +1,33 @@
-import * as React from 'react';
-import styled from 'styled-components';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { goToLastPage } from '../routes/coordinator';
-
-export const Header = styled.div`
-  display: flex;
-  color: #ffd500;
-  background-color: #00509d;
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-  justify-content: center;
-  position: relative;
-`;
-export const Button = styled.button`
-  position: absolute;
-  left: 20px;
-  margin-top: 28px;
-`;
+import { goToLastPage, goToDetails } from '../routes/coordinator';
+import { GlobalStateContext } from '../context/global/GlobalStateContext';
+import { Header, Button, Container } from './styles';
+import * as S from './styles';
 
 export const PokedexPage = () => {
   const navigate = useNavigate();
+
+  const { states, setters, requests } = useContext(GlobalStateContext);
+  const { pokedex } = states
+  const { setPokedex } = setters
+
+  const pokemonsPokedex = pokedex && pokedex.map((pokemon) => {
+    return (
+      <S.Conteudo>
+        <S.Imagem src={pokemon.image} alt={pokemon.name} />
+        <S.Buttons>
+          <h3>{pokemon.name}</h3>
+          <button>Remover pokemon</button>
+          <button
+            onClick={() => goToDetails(navigate, pokemon.name)}
+          >
+            Detalhes
+          </button>
+        </S.Buttons>
+      </S.Conteudo>
+    )
+  })
 
   return (
     <div>
@@ -26,7 +35,9 @@ export const PokedexPage = () => {
         <Button onClick={() => goToLastPage(navigate)}>Voltar para a lista de pokemons</Button>
         <h1>Lista de Pokémons</h1>
       </Header>
-      <p>Pokedex</p>
+      <Container>
+        {pokemonsPokedex}
+      </Container>
     </div>
   );
 };
