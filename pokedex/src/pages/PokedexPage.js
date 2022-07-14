@@ -9,35 +9,35 @@ export const PokedexPage = () => {
   const navigate = useNavigate();
 
   const { states, setters, requests } = useContext(GlobalStateContext);
-  const { pokedex } = states
-  const { setPokedex } = setters
+  const { pokedex } = states;
+  const { setPokedex } = setters;
 
-  const pokemonsPokedex = pokedex && pokedex.map((pokemon) => {
-    return (
-      <S.Conteudo>
-        <S.Imagem src={pokemon.image} alt={pokemon.name} />
-        <S.Buttons>
-          <h3>{pokemon.name}</h3>
-          <button>Remover pokemon</button>
-          <button
-            onClick={() => goToDetails(navigate, pokemon.name)}
-          >
-            Detalhes
-          </button>
-        </S.Buttons>
-      </S.Conteudo>
-    )
-  })
+  const pokemonsPokedex =
+    pokedex &&
+    pokedex.map((pokemon) => {
+      return (
+        <S.Conteudo>
+          <S.Imagem src={pokemon.image} alt={pokemon.name} />
+          <S.Buttons>
+            <h3>{pokemon.name}</h3>
+            <button>Remover pokemon</button>
+            <button onClick={() => goToDetails(navigate, pokemon.name)}>
+              Detalhes
+            </button>
+          </S.Buttons>
+        </S.Conteudo>
+      );
+    });
 
   return (
     <div>
       <Header>
-        <Button onClick={() => goToLastPage(navigate)}>Voltar para a lista de pokemons</Button>
-        <h1>Lista de Pokémons</h1>
+        <Button onClick={() => goToLastPage(navigate)}>
+          Voltar para a lista de pokemons
+        </Button>
+        <h1>Pokedex</h1>
       </Header>
-      <Container>
-        {pokemonsPokedex}
-      </Container>
+      <Container>{pokemonsPokedex}</Container>
     </div>
   );
 };
