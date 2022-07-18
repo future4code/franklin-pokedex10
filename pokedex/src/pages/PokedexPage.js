@@ -12,22 +12,34 @@ export const PokedexPage = () => {
   const { pokedex } = states;
   const { setPokedex } = setters;
 
-  const pokemonsPokedex =
-    pokedex &&
-    pokedex.map((pokemon) => {
-      return (
-        <S.Conteudo>
-          <S.Imagem src={pokemon.image} alt={pokemon.name} />
-          <S.Buttons>
-            <h3>{pokemon.name}</h3>
-            <button>Remover pokemon</button>
-            <button onClick={() => goToDetails(navigate, pokemon.name)}>
-              Detalhes
-            </button>
-          </S.Buttons>
-        </S.Conteudo>
-      );
-    });
+  const pokemonsPokedex = pokedex && pokedex.map((pokemon) => {
+    return (
+      <S.Conteudo key={pokemon.name}>
+        <S.Imagem src={pokemon.image} alt={pokemon.name} />
+        <S.Buttons>
+          <h3>{pokemon.name}</h3>
+          <button
+            onClick={() => removePokemon(pokemon.name)}
+          >
+            Remover pokemon
+          </button>
+          <button
+            onClick={() => goToDetails(navigate, pokemon.name)}
+          >
+            Detalhes
+          </button>
+        </S.Buttons>
+      </S.Conteudo>
+    )
+  })
+
+  const removePokemon = (name) => {
+    const newPokedex = pokedex.filter((pokemon) => {
+      return name !== pokemon.name
+    })
+
+    setPokedex([...newPokedex])
+  }
 
   return (
     <div>

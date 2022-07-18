@@ -21,5 +21,5 @@ export const useRequestData = (url) => {
       });
   };
   useEffect(getData, [url]);
-  return [data, error, isLoading];
+  return [data, setData, error, isLoading];
 };

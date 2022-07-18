@@ -8,14 +8,14 @@ import { GlobalStateContext } from '../context/global/GlobalStateContext';
 
 export const CardPokemons = () => {
   const navigate = useNavigate();
-  const [pokemons, error, isLoading] = useRequestData(`${BASE_URL}pokemon/`);
+  const [pokemons, setPokemons, error, isLoading] = useRequestData(`${BASE_URL}pokemon/`);
   const { states, setters, requests } = useContext(GlobalStateContext);
   const { pokedex } = states;
   const { setPokedex } = setters;
 
   const addPokemon = (pokemon, url) => {
-    setPokedex([...pokedex, { ...pokemon, image: url }]);
-  };
+    setPokedex([...pokedex, {...pokemon, image: url}])
+  }
 
   return (
     <Container>
