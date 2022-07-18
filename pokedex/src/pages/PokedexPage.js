@@ -14,11 +14,15 @@ export const PokedexPage = () => {
 
   const pokemonsPokedex = pokedex && pokedex.map((pokemon) => {
     return (
-      <S.Conteudo>
+      <S.Conteudo key={pokemon.name}>
         <S.Imagem src={pokemon.image} alt={pokemon.name} />
         <S.Buttons>
           <h3>{pokemon.name}</h3>
-          <button>Remover pokemon</button>
+          <button
+            onClick={() => removePokemon(pokemon.name)}
+          >
+            Remover pokemon
+          </button>
           <button
             onClick={() => goToDetails(navigate, pokemon.name)}
           >
@@ -28,6 +32,14 @@ export const PokedexPage = () => {
       </S.Conteudo>
     )
   })
+
+  const removePokemon = (name) => {
+    const newPokedex = pokedex.filter((pokemon) => {
+      return name !== pokemon.name
+    })
+
+    setPokedex([...newPokedex])
+  }
 
   return (
     <div>
