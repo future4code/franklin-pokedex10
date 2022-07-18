@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { useRequestData } from '../hooks/useRequestData';
 import { BASE_URL } from '../constants/urls';
 import { useNavigate } from 'react-router-dom';
@@ -10,8 +10,8 @@ export const CardPokemons = () => {
   const navigate = useNavigate();
   const [pokemons, setPokemons, error, isLoading] = useRequestData(`${BASE_URL}pokemon/`);
   const { states, setters, requests } = useContext(GlobalStateContext);
-  const { pokedex } = states
-  const { setPokedex } = setters
+  const { pokedex } = states;
+  const { setPokedex } = setters;
 
   const addPokemon = (pokemon, url) => {
     setPokedex([...pokedex, {...pokemon, image: url}])
@@ -40,9 +40,7 @@ export const CardPokemons = () => {
               <Imagem src={url} alt={pokemon.name} />
               <Buttons>
                 <h3>{nome_pokemon}</h3>
-                <button
-                  onClick={() => addPokemon(pokemon, url)}
-                >
+                <button onClick={() => addPokemon(pokemon, url)}>
                   Adicionar a Pokédex
                 </button>
                 <button

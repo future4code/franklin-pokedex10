@@ -9,8 +9,8 @@ export const PokedexPage = () => {
   const navigate = useNavigate();
 
   const { states, setters, requests } = useContext(GlobalStateContext);
-  const { pokedex } = states
-  const { setPokedex } = setters
+  const { pokedex } = states;
+  const { setPokedex } = setters;
 
   const pokemonsPokedex = pokedex && pokedex.map((pokemon) => {
     return (
@@ -44,12 +44,12 @@ export const PokedexPage = () => {
   return (
     <div>
       <Header>
-        <Button onClick={() => goToLastPage(navigate)}>Voltar para a lista de pokemons</Button>
-        <h1>Lista de Pokémons</h1>
+        <Button onClick={() => goToLastPage(navigate)}>
+          Voltar para a lista de pokemons
+        </Button>
+        <h1>Pokedex</h1>
       </Header>
-      <Container>
-        {pokemonsPokedex}
-      </Container>
+      <Container>{pokemonsPokedex}</Container>
     </div>
   );
 };
