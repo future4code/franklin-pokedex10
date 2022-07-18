@@ -15,12 +15,6 @@ export const CardPokemons = () => {
 
   const addPokemon = (pokemon, url) => {
     setPokedex([...pokedex, {...pokemon, image: url}])
-
-    const newPokemons = pokemons.filter((item) => {
-      return item !== pokemon
-    })
-
-    setPokemons([...newPokemons])
   }
 
   return (
